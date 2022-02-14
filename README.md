@@ -5,9 +5,8 @@ is also available to try again.
 To make this to work in your project add this addPostFrameCallback in build method of
 your class before your return widget tree.
 
-{
- ....
 
+```dart
   @override
   Widget build(BuildContext context) {
   WidgetsBinding.instance!.addPostFrameCallback(
@@ -20,6 +19,7 @@ your class before your return widget tree.
             ....
 
       }
+     ```
 
 Note: You can customize the design of bottom sheet by giving properties in checkInternetAndProceed method
 of this package.
