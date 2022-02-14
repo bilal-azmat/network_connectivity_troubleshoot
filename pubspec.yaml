@@ -1,6 +1,6 @@
 name: network_connectivity_troubleshoot
 description: A new Flutter package for network connectivity troubleshoot
-version: 0.0.5
+version: 0.0.6
 authors:
   - Bilal Azmat
 homepage: https://github.com/bilal-azmat/network_connectivity_troubleshoot
