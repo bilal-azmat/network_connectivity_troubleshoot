@@ -59,6 +59,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance!.addPostFrameCallback((_) =>
+        CheckInternetConnectivity().checkInternetAndProceed(context,
+            imageSize: 200.0,
+            enableDrag: false,
+            isDismissible: true,
+            sheetTopLeftRadius: 20,
+            sheetTopRightRadius: 40,
+            sheetHeight: MediaQuery.of(context).size.height * 0.45,
+            sheetWidth: MediaQuery.of(context).size.width,
+            sheetColor: Colors.white,
+            title: "No Internet",
+            buttonText: "Try Again!",
+            buttonBackgroundColor: Colors.blue,
+            buttonTextColor: Colors.white));
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -69,10 +83,6 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
-            ),
-            CustomButton(
-                onPressed: _incrementCounter,
-                child: const Text("Click me")
             ),
             Text(
               '$_counter',
