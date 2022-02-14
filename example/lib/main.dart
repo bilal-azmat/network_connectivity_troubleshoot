@@ -59,20 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance!.addPostFrameCallback((_) =>
-        CheckInternetConnectivity().checkInternetAndProceed(context,
-            imageSize: 200.0,
-            enableDrag: false,
-            isDismissible: true,
-            sheetTopLeftRadius: 20,
-            sheetTopRightRadius: 0,
-            sheetHeight: MediaQuery.of(context).size.height * 0.45,
-            sheetWidth: MediaQuery.of(context).size.width,
-            sheetColor: Colors.white,
-            title: "No Internet",
-            buttonText: "Try Again!",
-            buttonBackgroundColor: Colors.blue,
-            buttonTextColor: Colors.white));
+    // add this in build method of class
+    WidgetsBinding.instance!.addPostFrameCallback(
+        (_) => CheckInternetConnectivity().checkInternetAndProceed(
+              context,
+              title: "No Internet",
+              buttonText: "Try Again!",
+            ));
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
