@@ -114,7 +114,7 @@ class CheckInternetConnectivity {
     // print("#buildNoInternetWgt");
     const imgSize = 200.0;
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      padding: EdgeInsets.symmetric(vertical: 16.0),
       color: sheetColor ?? Colors.white,
       height: sheetHeight ?? MediaQuery.of(context).size.height / 2.5,
       //padding: const EdgeInsets.all(16),
@@ -125,11 +125,20 @@ class CheckInternetConnectivity {
             title,
             style: Theme.of(context).textTheme.headline6,
           ),
-          Image.asset(
-            'assets/images/no_internet.png',
+          Container(
             width: imageSize ?? imgSize,
             height: imageSize ?? imgSize,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                        'packages/network_connectivity_troubleshoot/assets/images/no_internet.png'))),
           ),
+
+          // Image.asset(
+          //   'assets/images/no_internet.png',
+          //   width: imageSize ?? imgSize,
+          //   height: imageSize ?? imgSize,
+          // ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(builderContext);

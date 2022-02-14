@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
             enableDrag: false,
             isDismissible: true,
             sheetTopLeftRadius: 20,
-            sheetTopRightRadius: 40,
+            sheetTopRightRadius: 0,
             sheetHeight: MediaQuery.of(context).size.height * 0.45,
             sheetWidth: MediaQuery.of(context).size.width,
             sheetColor: Colors.white,
